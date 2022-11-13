@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <script src="../node_modules/tronweb/dist/TronWeb.js"></script>
+    <!-- <script src="./main.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+   
+    <title>DiceGame</title>
+</head>
+<body>
+    <div class="nav1">
+        <button type="submit" class="butn2" onclick="buyToken()">
+        Get TWJ Token
+    </button>
+  
+     </div>
+     <div class=" nav">
+        <button type="button" class="butn2" onclick="connectToWallet()">
+        Connect to wallet
+    </button>
+     </div>
+
+        <div class="container">
+            <h1>Let's Play</h1>
+      
+            <div class="dice">
+             <p class="Bet"></p>
+                <img class="img1" src="dice6.png">
+            </div>
+      
+        </div>
+      
+        <div class="container bottom">
+            <button type="button" class="butn"
+                onClick="roll() ">
+                Roll the Dice
+            </button>
+            <div> <p id="result" class="text-capitalize font-weight-bold" style="font-size: x-large; color: blue;"></p></div>   
+        </div>
+        <div class="container bottom">
+            <p class="bet">Select bet type</p>
+         <div class="row">
+            <button type="button" class="butn1"> Odd</button>
+            <button type="button" class="butn" id="one"  onClick="getNewBet();"> 1</button>
+            <button type="button" class="butn" id="Three" onClick="getNewBet();" >3</button>
+            <button type="button" class="butn" id="Five"  onClick="getNewBet();"> 5</button>
+        </div> <br>
+        <div class="row">
+          <button type="button" class="butn1"> Even</button>
+          <button type="button" class="butn"  id="Two" onClick="getNewBet();"> 2</button>
+          <button type="button" class="butn" id="Four"  onClick="getNewBet();"> 4</button>
+          <button type="button" class="butn" id="Six"  onClick="getNewBet();"> 6</button>
+        </div><br>
+        <div> <p id="newBet" class="text-capitalize font-weight-bold" style="font-size: large; color: blueviolet"> </p></div>
+        </div>  
+    <script>
+        connectToWallet = async()=>{
+    let accounts = await tronLink.request({method: 'tron_requestAccounts'}) ;
+    var obj = setInterval(async ()=>{
+                if (window.tronWeb && window.tronWeb.defaultAddress.base58) {
+                    clearInterval(obj)
+                    let address = window.tronWeb.defaultAddress.base58
+                    console.log('connected to:', address);
+                    alert('Wallet connected to: '+ address);
+                }
+            }, 10)
+    };
+
+    buyToken = ()=>{
+        
+    }
+
+
+    getNewBet = () => {$('button').click(function(){
+    bet =$(this).attr('id'); 
+         document.querySelector("p.Bet").innerHTML = bet;})
+}
+
+// Function to roll the dice
+ roll = () =>{
+    setTimeout( function () {
+        var randomNumber = Math.floor(Math.random() * 6) + 1;
+        console.log(randomNumber);
+        document.querySelector(".img1").setAttribute("src",
+            "dice" + randomNumber + ".png");
+       
+            if(randomNumber == bet ){
+                document.querySelector("p.Bet").innerHTML = "You Won";
+                alert("You Won!!")
+            }else{
+                document.querySelector("p.Bet").innerHTML = "You Lost";
+                alert("You Lose!")
+            }
+    }, 2500);
+
+}
+
+    </script>
+</body>
+</html>

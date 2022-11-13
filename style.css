@@ -1,0 +1,98 @@
+.container {
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+.nav{
+    float: right;
+}
+.nav1{
+    margin-left:25px;
+    float: left;
+}
+.market{
+    width: 215px;
+    height: 250px;
+    padding: 10px;
+    border: 5px solid rgb(255, 255, 255);
+    margin-top:5px;
+}
+.dice {
+    text-align: center;
+    display: inline-block;
+    margin: 8px;
+}
+
+body {
+    background-color: #042f4b;
+    background-image: url('./6195678.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+}
+
+h1 {
+    margin: 30px;
+    font-family: "Lobster", cursive;
+    text-shadow: 5px 0 #232931;
+    font-size: 4.5rem;
+    color: #c41fda;
+    text-align: center;
+}
+
+p {
+    font-size: 1.5rem;
+    color: #ffffff;
+    font-family: "Indie Flower", cursive;
+}
+.bet{
+    font-weight: 800;
+    font-size: 2.5rem;
+}
+
+img {
+    width: 100%;
+}
+
+.bottom {
+    padding-top: 30px;
+}
+
+.butn {
+    background:  #340592;
+    font-family: "Indie Flower", cursive;
+    border-radius: 7px;
+    color: #ffff;
+    font-size: 30px;
+    margin-right: 10px;
+    padding: 16px 25px 16px 25px;
+    text-decoration: none;
+}
+.butn1{
+    background: #c41fda;
+    margin-right: 25px;
+    font-family: "Indie Flower", cursive;
+    border-radius: 7px;
+    color: #ffff;
+    font-size: 30px;
+    padding: 16px 25px 16px 25px;
+    text-decoration: none;
+}
+.butn2{
+    background: #340592 ;
+    margin-right: 25px;
+    font-family: "Indie Flower", cursive;
+    border-radius: 7px;
+    color: #ffff;
+    font-size: 30px;
+    padding: 8px 15px 10px 15px;
+    text-decoration: none;
+}
+.butn2:hover {
+    background: #c41fda;
+    text-decoration: none;
+}
+.butn:hover {
+    background: #c41fda;
+    text-decoration: none;
+}
