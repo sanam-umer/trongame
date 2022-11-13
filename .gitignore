@@ -1,5 +1,5 @@
 
-src/js/metacoin-config.js
+src/js/tronweb.js
 node_modules
 build
 .env
